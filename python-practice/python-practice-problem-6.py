@@ -9,6 +9,7 @@
 # Elements that don't appear in arr2 should be placed at the end of arr1
 # in ascending order.
 
+
 class Solution:
     def relativeSortArray(self, arr1: List[int], arr2: List[int]) -> List[int]:
         result = []
