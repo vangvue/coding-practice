@@ -14,7 +14,7 @@ class Solution:
             if char in letterList:
                 letterStr += char
 
-        letterIndex = len(letterStr) - 1 # Used to reverse the string
+        letterIndex = len(letterStr) - 1 # Will use to find the last index and decrement to reverse str
 
         for char in S:
             if char in letterList:
