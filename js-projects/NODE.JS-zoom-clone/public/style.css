@@ -99,3 +99,8 @@ video {
     border: none;
     color: #F5F5F5;
 }
+
+.message {
+    color: white;
+    list-style: none;
+}
