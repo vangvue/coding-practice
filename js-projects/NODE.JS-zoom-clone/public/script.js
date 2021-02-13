@@ -116,7 +116,7 @@ const setStopVideo = () => {
     <span>Stop Video</span>
     `
 
-    document.querySelectory(".main__video__button").innerHTML = html;
+    document.querySelector(".main__video__button").innerHTML = html;
 }
 
 const setPlayVideo = () => {
