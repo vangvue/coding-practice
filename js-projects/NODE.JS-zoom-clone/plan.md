@@ -9,3 +9,6 @@
 - Add the ability to create messages DONE
 - Add mute button DONE
 - Add Stop Video button DONE
+- Add usernames for users 
+- Add the ability to leave the meeting
+- Add the ability for other functions
