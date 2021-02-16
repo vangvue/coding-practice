@@ -127,3 +127,12 @@ const setPlayVideo = () => {
 
     document.querySelector(".main__video__button").innerHTML = html;
 }
+
+const leaveMeeting = () => {
+    const html = `
+    <i class="stop fas fa-video-slash"></i>
+    <span>Play Video</span>
+    `
+
+    document.querySelector(".main__leave__button").innerHTML = html;
+}
