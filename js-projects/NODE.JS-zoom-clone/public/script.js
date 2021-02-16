@@ -2,6 +2,7 @@ const socket = io("/");
 const videoGrid = document.getElementById("video-grid");
 const myVideo = document.createElement("video");
 myVideo.muted = true;
+const peers = {};
 
 var peer = new Peer(undefined, {
     path: "/peerjs",
@@ -28,7 +29,6 @@ navigator.mediaDevices.getUserMedia({
 
     socket.on("user-connected", (userId) => {
         connectToNewUser(userId, stream);
-
     })
 
     let text = $("input");
@@ -46,6 +46,10 @@ navigator.mediaDevices.getUserMedia({
     })
 })
 
+socket.on("user-disconnected", (userId) => {
+    if (peers[userId]) peers[userId].close()
+})
+
 peer.on("open", id => {
     socket.emit("join-room", ROOM_ID, id);
 })
@@ -56,6 +60,11 @@ const connectToNewUser = (userId, stream) => {
     call.on("stream", userVideoStream => {
         addVideoStream(video, userVideoStream)
     })
+    call.on("close", () => {
+        video.remove();
+    })
+
+    peers[userId] = call;
 }
 
 
@@ -69,7 +78,7 @@ const addVideoStream = (video, stream) => {
 
 const scrollToBottom = () => {
     let d = $(".main__chat__window");
-    d.scrollToTop(d.prop("scrollHeight"));
+    d.scrollTop(d.prop("scrollHeight"));
 }
 
 const muteUnmute = () => {
@@ -128,11 +137,10 @@ const setPlayVideo = () => {
     document.querySelector(".main__video__button").innerHTML = html;
 }
 
-const leaveMeeting = () => {
-    const html = `
-    <i class="stop fas fa-video-slash"></i>
-    <span>Play Video</span>
-    `
+// const leaveMeeting = () => {
+//     if (confirm("Leave Meeting?")) {
+//         open(location, "_self").close();
+//     }
 
-    document.querySelector(".main__leave__button").innerHTML = html;
-}
+//     document.querySelector(".main__leave__button").innerHTML = html;
+// }
