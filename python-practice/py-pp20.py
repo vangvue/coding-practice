@@ -1,6 +1,6 @@
 # Write a program that replaces "?" with a lowercase character
 
-riddle = "asdc?????f"
+riddle = "??????"
 import random
 
 def replaceStr(s):
@@ -9,17 +9,17 @@ def replaceStr(s):
     if "?" not in s:
         return s
 
-    for char in s:
-        if char in lowerChars:
-            lowerChars = lowerChars.replace(char, "")
+    for x in range(len(s)):
+        charBef = s[x - 1] if x != 0 else None
+        charAft = s[x + 1] if x != len(s) - 1 else None
+        randChar = None
+        while True:
+            randChar = random.choice(lowerChars)
+            if randChar != charBef and randChar != charAft:
+                break
+        if s[x] == "?":
+            s = s.replace("?", randChar, 1)
 
-    sArr = list(s)
-    for x in range(len(sArr)):
-        randChar = random.choice(lowerChars)
-        if sArr[x] == "?":
-            sArr[x] = randChar
-            lowerChars = lowerChars.replace(randChar, "")
-
-    return "".join(sArr)
+    return s
 
 print(replaceStr(riddle))
