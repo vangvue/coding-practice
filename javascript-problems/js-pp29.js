@@ -15,8 +15,20 @@ console.log(sumRange(10));
 // Write a function called power which takes in a base and an exponent.
 // If the exponent is 0, return 1.
 function power(base, exponent) {
-  if (exponent === 0) return 1
-  return base * power(base, exponent - 1)
+  if (exponent === 0) return 1;
+  return base * power(base, exponent - 1);
 }
 
 console.log(power(2, 4));
+
+
+// Question 3: Calculate factorial
+// Write a function that returns the factorial of a number. As a quick refresher,
+// a factorial of a number is the result of that number multiplied by the number before it,
+// and the number before that number, and so on, until you reach 1. The factorial of 1 is just 1.
+function factorial(n) {
+  if (n === 1) return 1;
+  return n * factorial(n - 1);
+}
+
+console.log(factorial(5));
