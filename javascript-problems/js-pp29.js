@@ -32,3 +32,15 @@ function factorial(n) {
 }
 
 console.log(factorial(5));
+
+
+// Question 5: Product of an array
+// Write a function called productOfArray which takes in an array
+// of numbers and returns the product of them all
+function product(arr) {
+  let result = arr.pop()
+  if (arr.length === 1) return result * arr[0]
+  return result * product(arr)
+}
+
+console.log(product([1, 2, 3, 10, 10]));
