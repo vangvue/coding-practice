@@ -69,3 +69,22 @@ const rangeSumBST = (root, low, high) => {
     traverse(root);
     return sum
 };
+
+
+// ruby recursion problem
+// ruby practice
+// def rotate_array(arr, num)
+//   if num > 0
+//     arrLast = arr.pop()
+//     arr.unshift(arrLast)
+//     return rotate_array(arr, num - 1)
+//   else
+//     return arr
+//   end
+// end
+
+// print rotate_array([ "Matt", "Danny", "Mashu", "Matthias" ], 1) # => [ "Matthias", "Matt", "Danny", "Mashu" ]
+// puts
+
+// print rotate_array([ "a", "b", "c", "d" ], 2) # => [ "c", "d", "a", "b" ]
+// puts
