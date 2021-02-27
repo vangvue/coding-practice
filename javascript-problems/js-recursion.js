@@ -88,3 +88,9 @@ const rangeSumBST = (root, low, high) => {
 
 // print rotate_array([ "a", "b", "c", "d" ], 2) # => [ "c", "d", "a", "b" ]
 // puts
+
+// Greatest common divisor
+// The greatest common divisor (gcd) of two or more integers, 
+// when at least one of them is not zero, is the largest positive integer 
+// that divides the numbers without a remainder. 
+// Recursively find the greatest common divisor of a sequnce of values.
