@@ -90,7 +90,30 @@ const rangeSumBST = (root, low, high) => {
 // puts
 
 // Greatest common divisor
-// The greatest common divisor (gcd) of two or more integers, 
+// The greatest common divisor (gcd) of two integers, 
 // when at least one of them is not zero, is the largest positive integer 
 // that divides the numbers without a remainder. 
 // Recursively find the greatest common divisor of a sequnce of values.
+
+function gcd(a, b) {
+    if (b == 0) {
+        return a;
+    }
+    return gcd(b, a % b);
+};
+
+console.log(gcd(1263262, 553443));
+//11
+
+
+// https://leetcode.com/problems/count-of-matches-in-tournament/
+// 1688. Count of Matches in Tournament
+
+function numberOfMatches(n, sum = 0) {
+    if (n === 1) return sum;
+    if (n % 2 === 0) {
+        return numberOfMatches((n / 2), sum += n / 2);
+    } else if (n % 2 === 1) {
+        return numberOfMatches((((n - 1) / 2) + 1), sum += (n - 1) / 2);
+    }
+};
