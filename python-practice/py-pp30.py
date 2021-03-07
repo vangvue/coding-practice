@@ -17,3 +17,11 @@ class Solution:
             emptyArr.append(emptyStr)
             emptyStr = ""
         return " ".join(emptyArr)
+
+# Optimized
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        arr =[]
+        for i in s.split(" "):
+            arr.append(i[::-1])
+        return " ".join(arr)
