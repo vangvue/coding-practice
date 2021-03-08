@@ -15,3 +15,11 @@ class Solution:
             if num not in nums:
                 return num
 
+# Shorter version
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        for a in range(len(nums) + 1):
+            if a not in nums:
+                return a
+
+
