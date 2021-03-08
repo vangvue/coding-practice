@@ -23,3 +23,16 @@ class Solution:
                 return a
 
 
+# Different way to solve
+# Compare method
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        nums.sort()
+        arr = list(range(len(nums) + 1))
+        i = 0
+        for a in nums:
+            if a != arr[i]:
+                return arr[i]
+            else:
+                arr.pop(i)
+        return arr[0]
