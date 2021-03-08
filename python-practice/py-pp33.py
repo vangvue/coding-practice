@@ -36,3 +36,10 @@ class Solution:
             else:
                 arr.pop(i)
         return arr[0]
+
+
+# Follow up: Could you implement a solution 
+# using only O(1) extra space complexity and O(n) runtime complexity?
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        return sum(range(len(nums)+1)) - sum(nums)
