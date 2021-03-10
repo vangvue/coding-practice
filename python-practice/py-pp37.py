@@ -36,3 +36,8 @@ class Solution:
             i += 1
         
         return max(obj, key = obj.get)
+
+# Optimized version
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        return sorted(nums)[len(nums)//2]
