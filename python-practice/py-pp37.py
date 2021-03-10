@@ -25,3 +25,14 @@ class Solution:
                 majEle = val
         
         return result
+
+# Shorten code
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        obj = {}
+        i = 0
+        while i < len(nums):
+            obj[nums[i]] = obj.get(nums[i], 0) + 1
+            i += 1
+        
+        return max(obj, key = obj.get)
