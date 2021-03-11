@@ -24,3 +24,23 @@ class Solution:
             count += 1
             
         return False
+
+# Change != to <
+# Made my code run faster
+class Solution:
+    def rotateString(self, A: str, B: str) -> bool:
+        count = 0
+        bLen = len(B)
+        
+        if len(A) == 0 and len(B) == 0:
+            return True
+        
+        while count < len(B):
+            if A == B:
+                return True
+            else:
+                holder = B[:1]
+                B = B[1:] + holder
+            count += 1
+            
+        return False
