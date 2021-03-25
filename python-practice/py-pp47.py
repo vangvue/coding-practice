@@ -7,7 +7,6 @@
 
 class Solution:
     def isPowerOfThree(self, n: int) -> bool:
-        count = 1
         if n == 1:
             return True
         
@@ -17,5 +16,16 @@ class Solution:
         
         if i == n:
             return True
+        else:
+            return False
+
+# Method above is similar to py-pp44.py
+# Different Approach
+class Solution:
+    def isPowerOfThree(self, n: int) -> bool:
+        if n % 10 in [1, 3, 9, 7]:
+            while n % 3 == 0:
+                n = n // 3
+            return n == 1       
         else:
             return False
