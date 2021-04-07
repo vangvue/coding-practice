@@ -117,3 +117,15 @@ function numberOfMatches(n, sum = 0) {
         return numberOfMatches((((n - 1) / 2) + 1), sum += (n - 1) / 2);
     }
 };
+
+// Lucas Number problem practice
+// Write a function, lucasNumber(n), that takes in a number.
+// The function should return the n-th number of the Lucas Sequence.
+// The 0-th number of the Lucas Sequence is 2.
+// The 1-st number of the Lucas Sequence is 1
+// To generate the next number of the sequence, we add up the previous two numbers.
+function lucasNumber(n) {
+    if (n === 0) return 2
+    if (n === 1) return 1
+    return lucasNumber(n - 1) + lucasNumber(n - 2)
+}
