@@ -142,3 +142,12 @@ function sumArray(array) {
     let remainder = array.slice(1)
     return firstEl + sumArray(remainder)
 }
+
+// Write a function, reverseString(str), that takes in a string.
+// The function should return the string with it's characters in reverse order.
+//
+// Solve this recursively!
+function reverseString(str) {
+    if (str.length === 0) return ""
+    return reverseString(str.slice(1)) + str[0];
+}
