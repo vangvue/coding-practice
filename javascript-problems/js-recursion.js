@@ -129,3 +129,16 @@ function lucasNumber(n) {
     if (n === 1) return 1
     return lucasNumber(n - 1) + lucasNumber(n - 2)
 }
+
+
+// Write a function, sumArray(array), that takes in an array of numbers.
+// The function should return the total sum of the elements.
+// 
+// Solve this recursively!
+function sumArray(array) {
+    if (array.length === 0) return 0
+
+    let firstEl = array[0]
+    let remainder = array.slice(1)
+    return firstEl + sumArray(remainder)
+}
