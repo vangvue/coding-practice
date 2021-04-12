@@ -21,3 +21,26 @@ var sumOfUnique = function(nums) {
 
     return result
 };
+
+// Faster runtime
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var sumOfUnique = function(nums) {
+    let result = 0;
+    let hash = {};
+    let len = nums.length;
+
+    for (let i = 0; i < len; i++) {
+        if (nums[i] in hash) hash[nums[i]] += 1
+        else hash[nums[i]] = 1
+    }
+
+    for (const key in hash) {
+        const val = hash[key]
+        if (val < 2) result += parseInt(key)
+    }
+
+    return result
+};
