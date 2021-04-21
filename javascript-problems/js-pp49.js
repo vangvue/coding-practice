@@ -6,7 +6,7 @@
  * @return {string}
  */
 var thousandSeparator = function(n) {
-    n = n.toLocaleString().toString();
+    n = n.toLocaleString();
 
     for (let i = 0; i < n.length; i++) {
         if (n[i] === ",") n = n.replace(n[i], ".")
